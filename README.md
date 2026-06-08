@@ -25,7 +25,7 @@ Five invocable Apex classes that implement a complete appointment scheduling flo
 
 ## Requirements
 
-- Salesforce org with **Field Service** enabled
+- Salesforce org with **Field Service** or **Scheduler** enabled
 - **ServiceTerritory** records that are active and have Latitude/Longitude populated
 - **WorkType** records configured in your org
 - **Person Accounts** enabled (Setup > Account Settings)
