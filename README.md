@@ -2,8 +2,6 @@
 
 Five invocable Apex classes that implement a complete appointment scheduling flow for Salesforce Field Service. Designed for use in **Agentforce topics**, **Flows**, or any invocable context.
 
-*Vibe-Coded by Erik Abderhalden*
-
 ---
 
 ## What It Does
