@@ -46,7 +46,9 @@ sf project deploy start --source-dir force-app --target-org <your-org-alias>
 
 **Geocoding falls back silently** — If Salesforce Maps is not installed, `EA_LocationFinder` skips distance filtering and returns all active territories alphabetically rather than throwing an error.
 
-**WorkType name must match exactly** — `EA_SlotFinder` queries WorkType by Name (case-sensitive). A mismatch returns an error message in `errorMessage`. Run `SELECT Name FROM WorkType` in the Query Editor to find exact names.
+
+**WorkType name must match exactly** — EA_SlotFinder uses `WHERE Name = :req.workTypeName` — exact case-sensitive match. The agent or Flow must pass the string exactly as stored (e.g. `'Break-Fix'` not `'break-fix'`). Best practice is to feed the LLM the exact names from a prior SOQL lookup or hardcode them in the agent topic instructions.
+
 
 **Business hours use org local time** — Slot times are calculated using `DateTime.format()`, which respects the org's default timezone. If your business operates in a different timezone than the org setting, slots may appear offset.
 
